@@ -1,0 +1,98 @@
+
+
+* {
+  margin:0;
+  padding:0;
+}
+ul,li{
+  list-style: none;
+}
+html,body{
+  height:100%;
+}
+body{
+  background:url('../imgs/2034980.png') repeat;
+}
+.header{
+  position:relative;
+  background-color:#283539;
+  color:white;
+  font-size:14px;
+  text-align:center;
+  height:60px;
+  letter-spacing:2px;
+}
+.header:after{
+  display:block;
+  content:'';
+  clear:both;
+}
+.addnote{
+  float:left;
+  margin:10px 20px;
+  border:1px solid white;
+  border-radius:4px;
+  line-height:40px;
+  padding:0 20px;
+}
+.login {
+  float:right;
+  margin-right:20px;
+  margin-top:10px;
+}
+.login li{
+  list-style:none;
+  display:inline-block;
+  line-height:40px;
+  padding:0px 10px;
+}
+.login img{
+  width:30px;
+  height:30px;
+  vertical-align: middle;
+}
+.login a{
+  text-decoration: none;
+  color:white;
+}
+
+.logoff {
+  float:right;
+}
+.logoff a{
+  display:inline-block;
+  line-height:40px;
+  margin:10px 0px;
+  padding:0px 20px;
+  text-decoration: none;
+  color:white;
+}
+
+
+.content {
+  margin-top:10px;
+  width:100%;
+  position:relative;
+}
+.weather{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:400px;
+  height:40px;
+  line-height:40px;
+  transform:translate(-50%,-50%);
+}
+.weather div,ul{
+  display:inline-block;
+  outline:none;
+}
+.weather input {
+  display:inline-block;
+  line-height:40px;
+  width:60px;
+  outline:none;
+  background-color:#283539;
+  color:white;
+  border:none;
+}
