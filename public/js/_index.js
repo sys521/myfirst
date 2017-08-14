@@ -3333,7 +3333,7 @@
         function t(e) {
             var t = r("<div class=weatherct></div>"), n = r("<ul class=weathercity></ul>");
             r.each(e, function() {
-                var e = this.date.slice(2), t = this.type, o = this.low.slice(3), i = this.high.slice(3), s = r("<li><span>" + e + "</span><span>" + t + "</span><span>" + o + "-" + i + "</span></li>");
+                var e = this.date.slice(-3), t = this.type, o = this.low.slice(3), i = this.high.slice(3), s = r("<li><span>" + e + "</span><span>" + t + "</span><span>" + o + "-" + i + "</span></li>");
                 n.append(s);
             }), t.append(n), r(".weather").append(t);
         }
@@ -3360,8 +3360,7 @@
             init: function() {
                 var e = this.$li = this.$ct.find("li");
                 this.curtpage = 1, this.animate = !1, this.$liheight = this.$li.first().outerHeight(!0), 
-                this.$lilength = this.$li.length, this.$lict = this.$ct.find("ul"), console.log(this.$lict), 
-                console.log(e.first().clone()), console.log(this.$ct), this.$lict.append(e.first().clone()).prepend(e.last().clone()).height((this.$lilength + 2) * this.$liheight).css({
+                this.$lilength = this.$li.length, this.$lict = this.$ct.find("ul"), this.$lict.append(e.first().clone()).prepend(e.last().clone()).height((this.$lilength + 2) * this.$liheight).css({
                     top: -this.$liheight
                 });
             },
