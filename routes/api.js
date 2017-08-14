@@ -9,6 +9,7 @@ var Note= require('../model/note.js')
 
 
 router.get('/notes',function(req,res,next){
+    console.log(11111)
     var query={
         raw:true
     }
@@ -18,6 +19,7 @@ router.get('/notes',function(req,res,next){
         }
     }
     Note.findAll(query).then(function(notes){
+        console.log(notes)
         res.send({status:0,data:notes})
     }).catch(function(){
         res.send({status:1,errormsg:'数据库出错'})
@@ -25,7 +27,7 @@ router.get('/notes',function(req,res,next){
 })
 
 router.post('/notes/add',function(req,res,next){
-    console.log(req.body)
+
     if(!req.session.user){
         return res.send({status:1,errormsg:'请先登录'})
     }
@@ -33,7 +35,9 @@ router.post('/notes/add',function(req,res,next){
         res.send({status:1,errormsg:'请输入内容'})
     }else{
         var uid=req.session.user.uid
-        Note.create({noteid:req.body.noteid,context:req.body.context,uid:uid}).then(function(){
+        console.log(req.session.user)
+        var  username=req.session.user.username
+        Note.create({noteid:req.body.noteid,context:req.body.context,uid:uid,username:username}).then(function(){
             res.send({status:0})
         }).catch(function(){
             res.send({status:1,errormsg:'数据库出错'})

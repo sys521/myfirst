@@ -34,6 +34,9 @@ var Note = sequelize.define('note',{
     },
     uid:{
         type:Sequelize.STRING
+    },
+    username:{
+        type:Sequelize.STRING
     }
 })
 //Note.sync({force:true})

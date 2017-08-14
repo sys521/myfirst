@@ -152,10 +152,10 @@
         function E() {
             return !0;
         }
-        function S() {
+        function j() {
             return !1;
         }
-        function j() {
+        function S() {
             try {
                 return se.activeElement;
             } catch (e) {}
@@ -168,7 +168,7 @@
                 return e;
             }
             if (null == r && null == o ? (o = n, r = n = void 0) : null == o && ("string" == typeof n ? (o = r, 
-            r = void 0) : (o = r, r = n, n = void 0)), !1 === o) o = S; else if (!o) return e;
+            r = void 0) : (o = r, r = n, n = void 0)), !1 === o) o = j; else if (!o) return e;
             return 1 === i && (s = o, o = function(e) {
                 return ye().off(e), s.apply(this, arguments);
             }, o.guid = s.guid || (s.guid = ye.guid++)), e.each(function() {
@@ -605,7 +605,7 @@
                         }
                     }
                 }
-                return S(e.replace(ie, "$1"), t, n, r);
+                return j(e.replace(ie, "$1"), t, n, r);
             }
             function n() {
                 function e(n, r) {
@@ -709,7 +709,7 @@
                 }, s, !0), c = p(function(e) {
                     return K(t, e) > -1;
                 }, s, !0), l = [ function(e, n, r) {
-                    var o = !i && (r || n !== j) || ((t = n).nodeType ? u(e, n, r) : c(e, n, r));
+                    var o = !i && (r || n !== S) || ((t = n).nodeType ? u(e, n, r) : c(e, n, r));
                     return t = null, o;
                 } ]; a < o; a++) if (n = w.relative[e[a].type]) l = [ p(d(l), n) ]; else {
                     if (n = w.filter[e[a].type].apply(null, e[a].matches), n[M]) {
@@ -724,8 +724,8 @@
             }
             function y(e, n) {
                 var o = n.length > 0, i = e.length > 0, s = function(r, s, a, u, c) {
-                    var l, f, p, d = 0, h = "0", v = r && [], m = [], y = j, x = r || i && w.find.TAG("*", c), b = I += null == y ? 1 : Math.random() || .1, T = x.length;
-                    for (c && (j = s === L || s || c); h !== T && null != (l = x[h]); h++) {
+                    var l, f, p, d = 0, h = "0", v = r && [], m = [], y = S, x = r || i && w.find.TAG("*", c), b = I += null == y ? 1 : Math.random() || .1, T = x.length;
+                    for (c && (S = s === L || s || c); h !== T && null != (l = x[h]); h++) {
                         if (i && l) {
                             for (f = 0, s || l.ownerDocument === L || (D(l), a = !H); p = e[f++]; ) if (p(l, s || L, a)) {
                                 u.push(l);
@@ -743,11 +743,11 @@
                         }
                         J.apply(u, m), c && !r && m.length > 0 && d + n.length > 1 && t.uniqueSort(u);
                     }
-                    return c && (I = b, j = y), v;
+                    return c && (I = b, S = y), v;
                 };
                 return o ? r(s) : s;
             }
-            var x, b, w, T, C, k, E, S, j, N, A, D, L, q, H, O, $, F, R, M = "sizzle" + 1 * new Date(), P = e.document, I = 0, W = 0, B = n(), U = n(), _ = n(), z = function(e, t) {
+            var x, b, w, T, C, k, E, j, S, N, A, D, L, q, H, O, $, F, R, M = "sizzle" + 1 * new Date(), P = e.document, I = 0, W = 0, B = n(), U = n(), _ = n(), z = function(e, t) {
                 return e === t && (A = !0), 0;
             }, X = {}.hasOwnProperty, V = [], Y = V.pop, G = V.push, J = V.push, Q = V.slice, K = function(e, t) {
                 for (var n = 0, r = e.length; n < r; n++) if (e[n] === t) return n;
@@ -1142,7 +1142,7 @@
                     i = _(e, y(o, r)), i.selector = e;
                 }
                 return i;
-            }, S = t.select = function(e, t, n, r) {
+            }, j = t.select = function(e, t, n, r) {
                 var o, i, s, a, u, l = "function" == typeof e && e, p = !r && k(e = l.selector || e);
                 if (n = n || [], 1 === p.length) {
                     if (i = p[0] = p[0].slice(0), i.length > 2 && "ID" === (s = i[0]).type && 9 === t.nodeType && H && w.relative[i[1].type]) {
@@ -1184,7 +1184,7 @@
         }, Ee = function(e, t) {
             for (var n = []; e; e = e.nextSibling) 1 === e.nodeType && e !== t && n.push(e);
             return n;
-        }, Se = ye.expr.match.needsContext, je = /^<([a-z][^\/\0>:\x20\t\r\n\f]*)[\x20\t\r\n\f]*\/?>(?:<\/\1>|)$/i, Ne = /^.[^:#\[\.,]*$/;
+        }, je = ye.expr.match.needsContext, Se = /^<([a-z][^\/\0>:\x20\t\r\n\f]*)[\x20\t\r\n\f]*\/?>(?:<\/\1>|)$/i, Ne = /^.[^:#\[\.,]*$/;
         ye.filter = function(e, t, n) {
             var r = t[0];
             return n && (e = ":not(" + e + ")"), 1 === t.length && 1 === r.nodeType ? ye.find.matchesSelector(r, e) ? [ r ] : [] : ye.find.matches(e, ye.grep(t, function(e) {
@@ -1206,7 +1206,7 @@
                 return this.pushStack(c(this, e || [], !0));
             },
             is: function(e) {
-                return !!c(this, "string" == typeof e && Se.test(e) ? ye(e) : e || [], !1).length;
+                return !!c(this, "string" == typeof e && je.test(e) ? ye(e) : e || [], !1).length;
             }
         });
         var Ae, De = /^(?:\s*(<[\w\W]+>)[^>]*|#([\w-]+))$/;
@@ -1217,7 +1217,7 @@
                 if (!(r = "<" === e[0] && ">" === e[e.length - 1] && e.length >= 3 ? [ null, e, null ] : De.exec(e)) || !r[1] && t) return !t || t.jquery ? (t || n).find(e) : this.constructor(t).find(e);
                 if (r[1]) {
                     if (t = t instanceof ye ? t[0] : t, ye.merge(this, ye.parseHTML(r[1], t && t.nodeType ? t.ownerDocument || t : se, !0)), 
-                    je.test(r[1]) && ye.isPlainObject(t)) for (r in t) ye.isFunction(this[r]) ? this[r](t[r]) : this.attr(r, t[r]);
+                    Se.test(r[1]) && ye.isPlainObject(t)) for (r in t) ye.isFunction(this[r]) ? this[r](t[r]) : this.attr(r, t[r]);
                     return this;
                 }
                 return o = se.getElementById(r[2]), o && (this[0] = o, this.length = 1), this;
@@ -1239,7 +1239,7 @@
             },
             closest: function(e, t) {
                 var n, r = 0, o = this.length, i = [], s = "string" != typeof e && ye(e);
-                if (!Se.test(e)) for (;r < o; r++) for (n = this[r]; n && n !== t; n = n.parentNode) if (n.nodeType < 11 && (s ? s.index(n) > -1 : 1 === n.nodeType && ye.find.matchesSelector(n, e))) {
+                if (!je.test(e)) for (;r < o; r++) for (n = this[r]; n && n !== t; n = n.parentNode) if (n.nodeType < 11 && (s ? s.index(n) > -1 : 1 === n.nodeType && ye.find.matchesSelector(n, e))) {
                     i.push(n);
                     break;
                 }
@@ -1720,13 +1720,13 @@
                 },
                 focus: {
                     trigger: function() {
-                        if (this !== j() && this.focus) return this.focus(), !1;
+                        if (this !== S() && this.focus) return this.focus(), !1;
                     },
                     delegateType: "focusin"
                 },
                 blur: {
                     trigger: function() {
-                        if (this === j() && this.blur) return this.blur(), !1;
+                        if (this === S() && this.blur) return this.blur(), !1;
                     },
                     delegateType: "focusout"
                 },
@@ -1749,15 +1749,15 @@
             e.removeEventListener && e.removeEventListener(t, n);
         }, ye.Event = function(e, t) {
             if (!(this instanceof ye.Event)) return new ye.Event(e, t);
-            e && e.type ? (this.originalEvent = e, this.type = e.type, this.isDefaultPrevented = e.defaultPrevented || void 0 === e.defaultPrevented && !1 === e.returnValue ? E : S, 
+            e && e.type ? (this.originalEvent = e, this.type = e.type, this.isDefaultPrevented = e.defaultPrevented || void 0 === e.defaultPrevented && !1 === e.returnValue ? E : j, 
             this.target = e.target && 3 === e.target.nodeType ? e.target.parentNode : e.target, 
             this.currentTarget = e.currentTarget, this.relatedTarget = e.relatedTarget) : this.type = e, 
             t && ye.extend(this, t), this.timeStamp = e && e.timeStamp || ye.now(), this[ye.expando] = !0;
         }, ye.Event.prototype = {
             constructor: ye.Event,
-            isDefaultPrevented: S,
-            isPropagationStopped: S,
-            isImmediatePropagationStopped: S,
+            isDefaultPrevented: j,
+            isPropagationStopped: j,
+            isImmediatePropagationStopped: j,
             isSimulated: !1,
             preventDefault: function() {
                 var e = this.originalEvent;
@@ -1836,7 +1836,7 @@
                     for (o in e) this.off(o, t, e[o]);
                     return this;
                 }
-                return !1 !== t && "function" != typeof t || (n = t, t = void 0), !1 === n && (n = S), 
+                return !1 !== t && "function" != typeof t || (n = t, t = void 0), !1 === n && (n = j), 
                 this.each(function() {
                     ye.event.remove(this, e, n, t);
                 });
@@ -2398,17 +2398,17 @@
                 return null === e.getAttribute("value") ? "on" : e.value;
             });
         });
-        var St = /^(?:focusinfocus|focusoutblur)$/;
+        var jt = /^(?:focusinfocus|focusoutblur)$/;
         ye.extend(ye.event, {
             trigger: function(e, t, r, o) {
                 var i, s, a, u, c, l, f, p = [ r || se ], d = he.call(e, "type") ? e.type : e, h = he.call(e, "namespace") ? e.namespace.split(".") : [];
-                if (s = a = r = r || se, 3 !== r.nodeType && 8 !== r.nodeType && !St.test(d + ye.event.triggered) && (d.indexOf(".") > -1 && (h = d.split("."), 
+                if (s = a = r = r || se, 3 !== r.nodeType && 8 !== r.nodeType && !jt.test(d + ye.event.triggered) && (d.indexOf(".") > -1 && (h = d.split("."), 
                 d = h.shift(), h.sort()), c = d.indexOf(":") < 0 && "on" + d, e = e[ye.expando] ? e : new ye.Event(d, "object" == typeof e && e), 
                 e.isTrigger = o ? 2 : 3, e.namespace = h.join("."), e.rnamespace = e.namespace ? new RegExp("(^|\\.)" + h.join("\\.(?:.*\\.|)") + "(\\.|$)") : null, 
                 e.result = void 0, e.target || (e.target = r), t = null == t ? [ e ] : ye.makeArray(t, [ e ]), 
                 f = ye.event.special[d] || {}, o || !f.trigger || !1 !== f.trigger.apply(r, t))) {
                     if (!o && !f.noBubble && !ye.isWindow(r)) {
-                        for (u = f.delegateType || d, St.test(u + d) || (s = s.parentNode); s; s = s.parentNode) p.push(s), 
+                        for (u = f.delegateType || d, jt.test(u + d) || (s = s.parentNode); s; s = s.parentNode) p.push(s), 
                         a = s;
                         a === (r.ownerDocument || se) && p.push(a.defaultView || a.parentWindow || n);
                     }
@@ -2463,7 +2463,7 @@
                 }
             };
         });
-        var jt = n.location, Nt = ye.now(), At = /\?/;
+        var St = n.location, Nt = ye.now(), At = /\?/;
         ye.parseXML = function(e) {
             var t;
             if (!e || "string" != typeof e) return null;
@@ -2511,14 +2511,14 @@
             }
         });
         var Ot = /%20/g, $t = /#.*$/, Ft = /([?&])_=[^&]*/, Rt = /^(.*?):[ \t]*([^\r\n]*)$/gm, Mt = /^(?:about|app|app-storage|.+-extension|file|res|widget):$/, Pt = /^(?:GET|HEAD)$/, It = /^\/\//, Wt = {}, Bt = {}, Ut = "*/".concat("*"), _t = se.createElement("a");
-        _t.href = jt.href, ye.extend({
+        _t.href = St.href, ye.extend({
             active: 0,
             lastModified: {},
             etag: {},
             ajaxSettings: {
-                url: jt.href,
+                url: St.href,
                 type: "GET",
-                isLocal: Mt.test(jt.protocol),
+                isLocal: Mt.test(St.protocol),
                 global: !0,
                 processData: !0,
                 async: !0,
@@ -2599,7 +2599,7 @@
                         return o && o.abort(t), r(0, t), this;
                     }
                 };
-                if (m.promise(C), h.url = ((e || h.url || jt.href) + "").replace(It, jt.protocol + "//"), 
+                if (m.promise(C), h.url = ((e || h.url || St.href) + "").replace(It, St.protocol + "//"), 
                 h.type = t.method || t.type || h.method || h.type, h.dataTypes = (h.dataType || "*").toLowerCase().match(He) || [ "" ], 
                 null == h.crossDomain) {
                     c = se.createElement("a");
@@ -2794,7 +2794,7 @@
             var r, o, i;
             return t || (me.createHTMLDocument ? (t = se.implementation.createHTMLDocument(""), 
             r = t.createElement("base"), r.href = se.location.href, t.head.appendChild(r)) : t = se), 
-            o = je.exec(e), i = !n && [], o ? [ t.createElement(o[1]) ] : (o = k([ e ], t, i), 
+            o = Se.exec(e), i = !n && [], o ? [ t.createElement(o[1]) ] : (o = k([ e ], t, i), 
             i && i.length && ye(i).remove(), ye.merge([], o.childNodes));
         }, ye.fn.load = function(e, t, n) {
             var r, o, i, s = this, a = e.indexOf(" ");
@@ -3159,12 +3159,14 @@
         this.newobj = i.extend({}, this.default, this.obj || {}), this.noteid = this.newobj.noteid, 
         this.context = this.newobj.context, this.$ct = this.newobj.$ct;
     }, r.prototype.getNode = function() {
-        this.$note = i(' <div class="note"><div class="note-head"><span class="delete">&times;</span></div><div class="note-ct" contenteditable="true"></div></div>'), 
+        this.$note = i(' <div class="note"><div class="note-head"><span class="delete">&times;</span></div><div class="note-ct" contenteditable="true"></div><div class=note-footer><div class="username"></div><p class="time"></p></div></div>'), 
         this.$note.find(".note-ct").text(this.context);
     }, r.prototype.setStyle = function() {
         var e = this.color[Math.floor(6 * Math.random())];
-        this.$note.find(".note-head").css("background-color", e[0]), this.$note.find(".note-body").css("background-color", e[1]), 
-        this.$ct.append(this.$note), this.noteid && this.setLayout(), this.noteid || this.$note.css({
+        this.$note.find(".note-head").css("background-color", e[0]), this.$note.find(".note-ct").css("background-color", e[1]), 
+        this.$note.find(".note-footer").css("background-color", e[0]), this.$ct.append(this.$note), 
+        this.noteid && (this.$note.find(".username").text(this.newobj.username), this.$note.find(".time").text(this.newobj.createdAt.slice(0, 10)), 
+        this.setLayout()), this.noteid || this.$note.css({
             top: "400px"
         });
     }, r.prototype.setLayout = function() {
@@ -3218,8 +3220,8 @@
     var r = (n(1), n(10)), o = n(0), i = n(2), s = (n(5), n(13)), a = n(14), u = n(17);
     s.load(), i.on("node", r.place), i.on("add", s.add), i.on("weatherbegin", a.doIt), 
     i.on("weatherdone", u.doAuto), o(".cityname").on("blur", function(e) {
-        e.stopPropagation(), console.log(o(this).val()), o(".weatherct") && o(".weatherct").remove(), 
-        i.fire("weatherbegin", o(this).val()), console.log(111);
+        e.stopPropagation(), o(".weatherct") && o(".weatherct").remove(), i.fire("weatherbegin", o(this).val()), 
+        console.log(111);
     }), o(".cityname").on("keypress", function(e) {
         console.log(e.keyCode), 13 == e.keyCode && o(this).blur();
     }), o(".addnote").on("click", function() {
@@ -3284,7 +3286,7 @@
     n(4)(r, o);
     r.locals && (e.exports = r.locals);
 }, function(e, t, n) {
-    t = e.exports = n(3)(void 0), t.push([ e.i, ".note {\n  width: 200px;\n  position: absolute;\n  color: #333;\n  margin: 20px 10px;\n}\n.note:hover {\n  box-shadow: 2px 2px 2px #ccc;\n}\n.note-head {\n  height: 20px;\n  background: #ea9b35;\n  cursor: move;\n  border: 1px solid transparent;\n  border-radius: 4px 4px 0 0;\n}\n.note-head:before {\n  position: absolute;\n  left: 50%;\n  top: -11px;\n  margin-left: -32px;\n  content: ' ';\n  display: block;\n  width: 64px;\n  height: 18px;\n  background: #35bba3;\n}\n.note-head:after {\n  position: absolute;\n  left: 50%;\n  margin-left: 32px;\n  top: -11px;\n  z-index: -1;\n  content: '';\n  display: block;\n  width: 0;\n  height: 0;\n  border-left: 5px solid #299683;\n  border-top: 18px solid transparent;\n}\n.delete {\n  position: absolute;\n  top: 4px;\n  right: 4px;\n  font-size: 12px;\n  color: #fff;\n  cursor: pointer;\n  opacity: 0;\n  transition: opacity .3s;\n}\n.delete:hover {\n  opacity: 1;\n}\n.note-ct {\n  padding: 10px;\n  background-color: #efb04e;\n  outline: none;\n  border: 1px solid transparent;\n  border-radius: 0 0 4px 4px;\n}\n.move {\n  opacity: 0.8;\n  cursor: move;\n  transition: none;\n}\n", "" ]);
+    t = e.exports = n(3)(void 0), t.push([ e.i, ".note {\n  width: 200px;\n  position: absolute;\n  color: #333;\n  margin: 20px 10px;\n}\n.note:hover {\n  box-shadow: 2px 2px 2px #ccc;\n}\n.note-head {\n  height: 20px;\n  background: #ea9b35;\n  cursor: move;\n  border: 1px solid transparent;\n  border-radius: 4px 4px 0 0;\n}\n.note-head:before {\n  position: absolute;\n  left: 50%;\n  top: -11px;\n  margin-left: -32px;\n  content: ' ';\n  display: block;\n  width: 64px;\n  height: 18px;\n  background: #35bba3;\n}\n.note-head:after {\n  position: absolute;\n  left: 50%;\n  margin-left: 32px;\n  top: -11px;\n  z-index: -1;\n  content: '';\n  display: block;\n  width: 0;\n  height: 0;\n  border-left: 5px solid #299683;\n  border-top: 18px solid transparent;\n}\n.delete {\n  position: absolute;\n  top: 4px;\n  right: 4px;\n  font-size: 12px;\n  color: #fff;\n  cursor: pointer;\n  opacity: 0;\n  transition: opacity .3s;\n}\n.delete:hover {\n  opacity: 1;\n}\n.note-ct {\n  padding: 10px;\n  background-color: #efb04e;\n  outline: none;\n}\n.move {\n  opacity: 0.8;\n  cursor: move;\n  transition: none;\n}\n.note-footer {\n  font-size: 14px;\n  font-weight: 200;\n  text-align: right;\n  border: 1px solid transparent;\n  border-radius: 0 0 4px 4px;\n}\n.note-footer .username,\n.time {\n  padding: 5px 5px;\n}\n", "" ]);
 }, function(e, t, n) {
     var r = (n(2), n(5)), o = n(1), i = n(0), s = function() {
         function e() {
@@ -3292,7 +3294,7 @@
                 if (0 === e.status) {
                     console.log(e.data);
                     var t = e.data;
-                    i.each(t, function() {
+                    console.log(e.data), i.each(t, function() {
                         new r(this);
                     });
                 } else o("something wrong");
